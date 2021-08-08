@@ -6,7 +6,7 @@ import asyncio
 import io
 import time
 
-SECONDS_PER_MOVE = 5
+SECONDS_PER_MOVE = 0.5
 
 STOCKFISH_EXECUTABLE = "/root/stockfish/stockfish_14_linux_x64/stockfish_14_x64"
 LC0_EXECUTABLE = "/root/lc0/build/release/lc0"
@@ -39,7 +39,7 @@ while myBoard.is_game_over() == False:
         myMove = leelaEngine.play(myBoard, chess.engine.Limit(time=SECONDS_PER_MOVE))
     # node = node.add_variation(chess.Move.from_uci(str(myMove.move)))
     # myBoard.push(chess.Move.from_uci(str(myMove.move)))
-    node = node.add_variation(myMove)
+    node = node.add_variation(myMove.move)
     myBoard.push(myMove.move)
     print("move:", myMove.move)
     print(myBoard)
@@ -54,6 +54,6 @@ myGame.headers["Result"] = myBoard.result()
 myGame.headers["Site"] = "https://github.com/mattwhite180/chess-example"
 
 # end
-print(myGame)
+print(str(myGame))
 stockfishEngine.quit()
 leelaEngine.quit()
