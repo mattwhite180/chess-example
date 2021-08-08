@@ -1,0 +1,5 @@
+chess
+black
+psycopg2
+meson>=0.52.0
+colorama
