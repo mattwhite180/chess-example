@@ -5,6 +5,8 @@ import collections
 import asyncio
 import io
 import time
+from datetime import date
+
 
 SECONDS_PER_MOVE = 3
 
@@ -44,12 +46,14 @@ while myBoard.is_game_over() == False:
     print()
 
 print("game over!")
+print()
 
 myGame.headers["Event"] = "PYTHON CHESS EXAMPLE"
 myGame.headers["White"] = "Stockfish"
 myGame.headers["Black"] = "Leela (LC0)"
 myGame.headers["Result"] = myBoard.result()
 myGame.headers["Site"] = "https://github.com/mattwhite180/chess-example"
+myGame.headers["Date"] = date.today()
 
 print(str(myGame))
 stockfishEngine.quit()
