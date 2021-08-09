@@ -6,7 +6,7 @@ import asyncio
 import io
 import time
 
-SECONDS_PER_MOVE = 0.5
+SECONDS_PER_MOVE = 3
 
 STOCKFISH_EXECUTABLE = "/root/stockfish/stockfish_14_linux_x64/stockfish_14_x64"
 LC0_EXECUTABLE = "/root/lc0/build/release/lc0"
