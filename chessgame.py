@@ -51,7 +51,6 @@ myGame.headers["Black"] = "Leela (LC0)"
 myGame.headers["Result"] = myBoard.result()
 myGame.headers["Site"] = "https://github.com/mattwhite180/chess-example"
 
-# end
 print(str(myGame))
 stockfishEngine.quit()
 leelaEngine.quit()
