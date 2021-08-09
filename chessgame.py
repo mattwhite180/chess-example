@@ -37,8 +37,6 @@ while myBoard.is_game_over() == False:
     else:
         print("black's (LC0) turn")
         myMove = leelaEngine.play(myBoard, chess.engine.Limit(time=SECONDS_PER_MOVE))
-    # node = node.add_variation(chess.Move.from_uci(str(myMove.move)))
-    # myBoard.push(chess.Move.from_uci(str(myMove.move)))
     node = node.add_variation(myMove.move)
     myBoard.push(myMove.move)
     print("move:", myMove.move)
